@@ -17,6 +17,9 @@ remap({'ctrl'}, 'j', pressFn('down'))
 remap({'ctrl'}, 'k', pressFn('up'))
 remap({'ctrl'}, 'l', pressFn('right'))
 
+remap({'ctrl','alt','cmd'},'j', pressFn('1'))
+remap({'ctrl','alt','cmd'},' ', pressFn('0'))
+
 
 -- Credit for this implementation goes to @arbelt and @jasoncodes 🙇⚡️😻
 --
