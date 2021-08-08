@@ -37,7 +37,7 @@ control_handler = function(evt)
   if last_mods["ctrl"] == new_mods["ctrl"] then
     return false
   end
-  if not last_mods["ctrl"] then
+  i j not last_mods["ctrl"] then
     last_mods = new_mods
     send_escape = true
     control_key_timer:start()
