@@ -1,3 +1,8 @@
+hs.hotkey.bind({"cmd", "alt", "ctrl"}, "R", function()
+    hs.reload()
+end)
+hs.alert.show("Config loaded")
+
 local function pressFn(mods, key)
 	if key == nil then
 		key = mods
@@ -11,15 +16,25 @@ local function remap(mods, key, pressFn)
 	hs.hotkey.bind(mods, key, pressFn, nil, pressFn)	
 end
 
-
 remap({'ctrl'}, 'h', pressFn('left'))
 remap({'ctrl'}, 'j', pressFn('down'))
 remap({'ctrl'}, 'k', pressFn('up'))
 remap({'ctrl'}, 'l', pressFn('right'))
 
-remap({'ctrl','alt','cmd'},'j', pressFn('1'))
-remap({'ctrl','alt','cmd'},' ', pressFn('0'))
+-- u i o
+-- j k l
+-- m , .
 
+remap({'cmd','ctrl','alt','shift'},'space', pressFn('0'))
+remap({'cmd','ctrl','alt','shift'},'u', pressFn('7'))
+remap({'cmd','ctrl','alt','shift'},'i', pressFn('8'))
+remap({'cmd','ctrl','alt','shift'},'o', pressFn('9'))
+remap({'cmd','ctrl','alt','shift'},'j', pressFn('4'))
+remap({'cmd','ctrl','alt','shift'},'k', pressFn('5'))
+remap({'cmd','ctrl','alt','shift'},'l', pressFn('6'))
+remap({'cmd','ctrl','alt','shift'},'m', pressFn('1'))
+remap({'cmd','ctrl','alt','shift'},',', pressFn('2'))
+remap({'cmd','ctrl','alt','shift'},'.', pressFn('3'))
 
 -- Credit for this implementation goes to @arbelt and @jasoncodes 🙇⚡️😻
 --
