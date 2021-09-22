@@ -1,8 +1,24 @@
+-- reload config
 hs.hotkey.bind({"cmd", "alt", "ctrl"}, "R", function()
     hs.reload()
 end)
 hs.alert.show("Config loaded")
 
+-- open app
+-- from: https://liuhao.im/english/2017/06/02/macos-automation-and-shortcuts-with-hammerspoon.html
+--- A closure function
+function open(name)
+  return function()
+      hs.application.launchOrFocus(name)
+      if name == 'Finder' then
+          hs.appfinder.appFromName(name):activate()
+      end
+  end
+end
+
+hs.hotkey.bind({"alt","ctrl","cmd"}, "T", open("iTerm"))
+
+-- remap
 local function pressFn(mods, key)
 	if key == nil then
 		key = mods
@@ -20,6 +36,8 @@ remap({'ctrl'}, 'h', pressFn('left'))
 remap({'ctrl'}, 'j', pressFn('down'))
 remap({'ctrl'}, 'k', pressFn('up'))
 remap({'ctrl'}, 'l', pressFn('right'))
+remap({'ctrl', 'alt'}, 'l', pressFn('alt','right')) -- word-wise moving
+remap({'ctrl', 'alt'}, 'h', pressFn('alt','left'))
 
 -- u i o
 -- j k l
