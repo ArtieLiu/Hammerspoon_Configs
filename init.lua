@@ -1,5 +1,7 @@
+HYPER={"cmd", "alt", "ctrl", "shift"}
+
 -- reload config
-hs.hotkey.bind({"cmd", "alt", "ctrl", "shift"}, "R", function()
+hs.hotkey.bind(HYPER, "R", function()
     hs.reload()
 end)
 hs.alert.show("Config loaded")
@@ -16,31 +18,19 @@ function open(name)
   end
 end
 
-hs.hotkey.bind({"alt","ctrl","cmd","shift"}, "d", open("dict"))
-hs.hotkey.bind({"alt","ctrl","cmd","shift"}, "i", open("iTerm"))
-hs.hotkey.bind({"alt","ctrl","cmd","shift"}, "j", open("IntelliJ IDEA"))
-hs.hotkey.bind({"alt","ctrl","cmd","shift"}, "k", open("kanbanier"))
-hs.hotkey.bind({"alt","ctrl","cmd","shift"}, "m", open("Music"))
-hs.hotkey.bind({"alt","ctrl","cmd","shift"}, "n", open("notes"))
-hs.hotkey.bind({"alt","ctrl","cmd","shift"}, "o", open("Google Chrome"))
-hs.hotkey.bind({"alt","ctrl","cmd","shift"}, "p", open("preview"))
-hs.hotkey.bind({"alt","ctrl","cmd","shift"}, "s", open("skype"))
-hs.hotkey.bind({"alt","ctrl","cmd","shift"}, "w", open("wechat"))
-hs.hotkey.bind({"alt","ctrl","cmd","shift"}, "c", open("Visual Studio Code"))
-hs.hotkey.bind({"alt", "ctrl","cmd","shift"}, "z", open("zoom.us"))
-
-hs.hotkey.bind({"ctrl","cmd","shift"}, "d", open("dict"))
-hs.hotkey.bind({"ctrl","cmd","shift"}, "i", open("iTerm"))
-hs.hotkey.bind({"ctrl","cmd","shift"}, "j", open("IntelliJ IDEA"))
-hs.hotkey.bind({"ctrl","cmd","shift"}, "k", open("enan kanban.kanbanier"))
-hs.hotkey.bind({"ctrl","cmd","shift"}, "m", open("Music"))
-hs.hotkey.bind({"ctrl","cmd","shift"}, "n", open("notes"))
-hs.hotkey.bind({"ctrl","cmd","shift"}, "o", open("Google Chrome"))
-hs.hotkey.bind({"ctrl","cmd","shift"}, "p", open("preview"))
-hs.hotkey.bind({"ctrl","cmd","shift"}, "s", open("skype"))
-hs.hotkey.bind({"ctrl","cmd","shift"}, "w", open("wechat"))
-hs.hotkey.bind({"ctrl","cmd","shift"}, "c", open("Visual Studio Code"))
-hs.hotkey.bind({"ctrl","cmd","shift"}, "z", open("zoom.us"))
+hs.hotkey.bind(HYPER, "d", open("dict"))
+-- hs.hotkey.bind(HYPER, "i", open("iTerm"))
+hs.hotkey.bind(HYPER, "i", open("tabby"))
+hs.hotkey.bind(HYPER, "j", open("IntelliJ IDEA"))
+hs.hotkey.bind(HYPER, "k", open("kanbanier"))
+hs.hotkey.bind(HYPER, "m", open("Music"))
+hs.hotkey.bind(HYPER, "n", open("notes"))
+hs.hotkey.bind(HYPER, "o", open("Google Chrome"))
+hs.hotkey.bind(HYPER, "p", open("preview"))
+hs.hotkey.bind(HYPER, "s", open("skype"))
+hs.hotkey.bind(HYPER, "w", open("wechat"))
+hs.hotkey.bind(HYPER, "c", open("Visual Studio Code"))
+hs.hotkey.bind(HYPER, "z", open("zoom.us"))
 
 -- remap
 local function pressFn(mods, key)
@@ -56,7 +46,6 @@ local function remap(mods, key, pressFn)
 	hs.hotkey.bind(mods, key, pressFn, nil, pressFn)	
 end
 
--- remap({"alt","ctrl","cmd","shift"}, 'h', pressFn('left'))
 remap({'ctrl'}, 'h', pressFn('left'))
 remap({'ctrl'}, 'j', pressFn('down'))
 remap({'ctrl'}, 'k', pressFn('up'))
