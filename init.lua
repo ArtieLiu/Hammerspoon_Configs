@@ -18,6 +18,8 @@ function open(name)
   end
 end
 
+hs.hotkey.bind(HYPER, "b", open("obsidian"))
+hs.hotkey.bind(HYPER, "c", open("Visual Studio Code"))
 hs.hotkey.bind(HYPER, "d", open("dict"))
 hs.hotkey.bind(HYPER, "i", open("iTerm"))
 hs.hotkey.bind(HYPER, "j", open("IntelliJ IDEA"))
@@ -28,9 +30,7 @@ hs.hotkey.bind(HYPER, "o", open("Google Chrome"))
 hs.hotkey.bind(HYPER, "p", open("preview"))
 hs.hotkey.bind(HYPER, "s", open("skype"))
 hs.hotkey.bind(HYPER, "w", open("wechat"))
-hs.hotkey.bind(HYPER, "c", open("Visual Studio Code"))
 hs.hotkey.bind(HYPER, "z", open("zoom.us"))
-hs.hotkey.bind(HYPER, "b", open("obsidian"))
 
 -- remap
 local function pressFn(mods, key)
