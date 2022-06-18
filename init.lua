@@ -16,19 +16,18 @@ function launch(name)
 end
 
 -- open file
-function openFile(name)
+function open(name)
   return function()
       hs.open(name)
   end
 end
-
 
 hs.hotkey.bind(HYPER, "b", launch("obsidian"))
 hs.hotkey.bind(HYPER, "c", launch("Visual Studio Code"))
 hs.hotkey.bind(HYPER, "d", launch("dict"))
 hs.hotkey.bind(HYPER, "i", launch("iTerm"))
 hs.hotkey.bind(HYPER, "j", launch("IntelliJ IDEA"))
-hs.hotkey.bind(HYPER, "k", openFile("/Users/yinan.liu/OneDrive/Kanban/enan kanban.kanbanier"))
+hs.hotkey.bind(HYPER, "k", open("/Users/yinan.liu/OneDrive/Kanban/enan kanban.kanbanier"))
 hs.hotkey.bind(HYPER, "m", launch("Music"))
 hs.hotkey.bind(HYPER, "n", launch("notes"))
 hs.hotkey.bind(HYPER, "o", launch("Google Chrome"))
