@@ -9,7 +9,7 @@ hs.alert.show("Config loaded")
 -- open app
 -- from: https://liuhao.im/english/2017/06/02/macos-automation-and-shortcuts-with-hammerspoon.html
 --- A closure function
-function open(name)
+function launch(name)
   return function()
       hs.application.launchOrFocus(name)
   end
@@ -23,17 +23,17 @@ function openFile(name)
 end
 
 
-hs.hotkey.bind(HYPER, "b", open("obsidian"))
-hs.hotkey.bind(HYPER, "c", open("Visual Studio Code"))
-hs.hotkey.bind(HYPER, "d", open("dict"))
-hs.hotkey.bind(HYPER, "i", open("iTerm"))
-hs.hotkey.bind(HYPER, "j", open("IntelliJ IDEA"))
+hs.hotkey.bind(HYPER, "b", launch("obsidian"))
+hs.hotkey.bind(HYPER, "c", launch("Visual Studio Code"))
+hs.hotkey.bind(HYPER, "d", launch("dict"))
+hs.hotkey.bind(HYPER, "i", launch("iTerm"))
+hs.hotkey.bind(HYPER, "j", launch("IntelliJ IDEA"))
 hs.hotkey.bind(HYPER, "k", openFile("/Users/yinan.liu/OneDrive/Kanban/enan kanban.kanbanier"))
-hs.hotkey.bind(HYPER, "m", open("Music"))
-hs.hotkey.bind(HYPER, "n", open("notes"))
-hs.hotkey.bind(HYPER, "o", open("Google Chrome"))
-hs.hotkey.bind(HYPER, "s", open("Sublime Text"))
-hs.hotkey.bind(HYPER, "w", open("wechat"))
+hs.hotkey.bind(HYPER, "m", launch("Music"))
+hs.hotkey.bind(HYPER, "n", launch("notes"))
+hs.hotkey.bind(HYPER, "o", launch("Google Chrome"))
+hs.hotkey.bind(HYPER, "s", launch("Sublime Text"))
+hs.hotkey.bind(HYPER, "w", launch("wechat"))
 --  HYPER, "p", open("Snipaste")
 
 -- remap
