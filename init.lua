@@ -12,25 +12,29 @@ hs.alert.show("Config loaded")
 function open(name)
   return function()
       hs.application.launchOrFocus(name)
-      if name == 'Finder' then
-          hs.appfinder.appFromName(name):activate()
-      end
   end
 end
+
+-- open file
+function openFile(name)
+  return function()
+      hs.open(name)
+  end
+end
+
 
 hs.hotkey.bind(HYPER, "b", open("obsidian"))
 hs.hotkey.bind(HYPER, "c", open("Visual Studio Code"))
 hs.hotkey.bind(HYPER, "d", open("dict"))
 hs.hotkey.bind(HYPER, "i", open("iTerm"))
 hs.hotkey.bind(HYPER, "j", open("IntelliJ IDEA"))
-hs.hotkey.bind(HYPER, "k", open("kanbanier"))
+hs.hotkey.bind(HYPER, "k", openFile("/Users/yinan.liu/OneDrive/Kanban/enan kanban.kanbanier"))
 hs.hotkey.bind(HYPER, "m", open("Music"))
 hs.hotkey.bind(HYPER, "n", open("notes"))
 hs.hotkey.bind(HYPER, "o", open("Google Chrome"))
-hs.hotkey.bind(HYPER, "p", open("preview"))
-hs.hotkey.bind(HYPER, "s", open("skype"))
+hs.hotkey.bind(HYPER, "s", open("Sublime Text"))
 hs.hotkey.bind(HYPER, "w", open("wechat"))
-hs.hotkey.bind(HYPER, "z", open("zoom.us"))
+--  HYPER, "p", open("Snipaste")
 
 -- remap
 local function pressFn(mods, key)
